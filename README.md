@@ -1,5 +1,6 @@
 Code for the EMNLP paper, "Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages". 
-coming soon. 
+
+Coming soon. 
 
 ```
 @InProceedings{UKR18,
