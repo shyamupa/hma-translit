@@ -16,7 +16,7 @@ x1 x2 x3<tab>y1 y2 y3 y4 y5
 where `x1x2x3` is the input word (`xi` is the character), and `y1y2y3y4y5` is the desired output (transliteration). Example train and test files for bengali are in data/ folder. There is a optional 3rd column marking whether the word is *native* or *foreign* (see the paper for these terms); this column can be ignored for most purposes. 
 
 
-3. Run `train_model_on_files.sh` on your train (say train.txt) and dev file (dev.txt) as follows,
+3. Run `train_model_on_files.sh` on your train (say `train.txt`) and dev file (say `dev.txt`) as follows,
 
 ```
 ./train_model_on_files.sh train.txt dev.txt 100 translit.model
@@ -56,7 +56,7 @@ The output should report relevant metrics,
 There is also a interactive mode where one can input test words directly,
 
 ```
-./load_and_test_model_interactive.sh <ftrain> <model> <seed>
+./load_and_test_model_interactive.sh train.txt translit.model 100
 ...
 ...
 :INFO: => loading checkpoint hindi.model
