@@ -1,4 +1,4 @@
-Code for the EMNLP paper, "Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages".
+Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
 
 ## Running the code
 
