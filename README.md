@@ -1,3 +1,4 @@
+-Code for the EMNLP paper, "Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages".
 
 ## Running the code
 
@@ -65,3 +66,13 @@ enter surface:ओबामा
 [(-0.4624647759074629, 'o b a m a')]
 ```
 
+### Citation
+
+```
+@InProceedings{UKR18,
+  author =       {Upadhyay, Shyam and Kodner, Jordan and Roth, Dan},
+  title =        {Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages},
+  booktitle =    {EMNLP},
+  year =         {2018},
+}
+```
