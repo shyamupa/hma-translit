@@ -1,6 +1,6 @@
 Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
 
-Tested using pytorch version '0.3.1.post2'.
+Tested using pytorch version '0.3.1.post2' with python3.
 
 ## Running the code
 
