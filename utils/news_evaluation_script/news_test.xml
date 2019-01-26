@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<TransliterationCorpus
+	SourceLang = "English"
+	TargetLang = "Chinese"
+	CorpusID = "Test"
+	CorpusType = "Short test"
+	CorpusSize = "Tsiny"
+	Comments = "Just a test">
+
+
+	<Name ID="1">
+		<SourceName>ABARBANEL</SourceName>
+		<!-- should be first matching -->
+		<TargetName ID="1">阿巴巴纳尔</TargetName>
+		<!-- Participants to provide their top 10 candidate transliterations -->
+	</Name>
+	<Name ID="2">
+		<!-- should be second matching -->
+		<SourceName>ABBELL</SourceName>
+		<TargetName ID="2">阿贝尔尔</TargetName>
+	</Name>
+	<Name ID="3">
+		<!-- should match 3rd, and 5th candidates -->
+		<SourceName>ABBOT</SourceName>
+		<TargetName ID="3">阿布伯特</TargetName>
+		<TargetName ID="5">埃伯特</TargetName>
+	</Name>
+	<Name ID="4">
+		<SourceName>ABELE</SourceName>
+		<!-- should not match anything -->
+		<TargetName ID="1">阿贝尔埃伯特</TargetName>
+	</Name>
+</TransliterationCorpus>
+

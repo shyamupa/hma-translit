@@ -1,0 +1,16 @@
+*.tab
+*.dict
+*.pred
+*.model
+*.tar
+*.vocab
+*.vocab.romanized
+*.tar.gz
+phone_index*
+data/
+.idea
+*.txt
+*.pyc
+*.log
+*.so
+m2m/

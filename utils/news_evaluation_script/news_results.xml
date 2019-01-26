@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<TransliterationTaskResults
+	SourceLang = "English"
+	TargetLang = "Chinese"
+	GroupID = "Trans University"
+	RunID = "1"
+	RunType = "Standard"
+	Comments = "HMM Run with params: alpha=0.8 beta=1.25">
+
+
+	<Name ID="1">
+		<SourceName>ABARBANEL</SourceName>
+		<TargetName ID="1">阿巴巴纳尔</TargetName>
+		<TargetName ID="2">阿巴巴内尔</TargetName>
+		<TargetName ID="3">阿巴班尔</TargetName>
+		<TargetName ID="4">阿巴本尔</TargetName>
+		<TargetName ID="5">阿巴巴尼尔</TargetName>
+		<TargetName ID="6">阿巴班埃尔</TargetName>
+		<TargetName ID="7">阿巴班尔</TargetName>
+		<TargetName ID="8">阿巴尔班埃尔</TargetName>
+		<TargetName ID="9">阿巴巴奈</TargetName>
+		<TargetName ID="10">阿巴巴纳</TargetName>
+		<TargetName ID="11">阿巴尔班尔</TargetName>
+		<TargetName ID="12">埃巴巴纳尔</TargetName>
+		<TargetName ID="13">阿巴尔巴纳尔</TargetName>
+		<TargetName ID="14">阿巴巴恩尔</TargetName>
+		<TargetName ID="15">阿巴贝内尔</TargetName>
+		<TargetName ID="16">埃巴巴内尔</TargetName>
+		<TargetName ID="17">阿巴尔巴内尔</TargetName>
+		<TargetName ID="18">阿巴本埃尔</TargetName>
+		<TargetName ID="19">阿巴班克尔</TargetName>
+		<TargetName ID="20">阿巴贝恩尔</TargetName>
+		<!-- Participants to provide their top 10 candidate transliterations -->
+	</Name>
+	<Name ID="2">
+		<SourceName>ABBELL</SourceName>
+		<TargetName ID="1">阿贝尔</TargetName>
+		<TargetName ID="2">阿贝尔尔</TargetName>
+		<TargetName ID="3">阿布贝尔</TargetName>
+		<TargetName ID="4">阿卜贝尔</TargetName>
+		<TargetName ID="5">埃贝尔</TargetName>
+		<TargetName ID="6">阿布尔</TargetName>
+		<TargetName ID="7">阿比尔</TargetName>
+		<TargetName ID="8">艾贝尔</TargetName>
+		<TargetName ID="9">艾布贝尔</TargetName>
+		<TargetName ID="10">阿比尔</TargetName>
+		<TargetName ID="11">阿贝利</TargetName>
+		<TargetName ID="12">阿比埃尔</TargetName>
+		<TargetName ID="13">奥贝尔</TargetName>
+		<TargetName ID="14">阿贝莱</TargetName>
+		<TargetName ID="15">亚贝尔</TargetName>
+		<TargetName ID="16">阿比厄尔</TargetName>
+		<TargetName ID="17">阿比雷尔</TargetName>
+		<TargetName ID="18">亚伯贝尔</TargetName>
+		<TargetName ID="19">阿布比尔</TargetName>
+		<TargetName ID="20">埃布贝尔</TargetName>
+	</Name>
+	<Name ID="3">
+		<SourceName>ABBOT</SourceName>
+		<TargetName ID="1">阿伯特</TargetName>
+		<TargetName ID="2">阿比特</TargetName>
+		<TargetName ID="3">阿布伯特</TargetName>
+		<TargetName ID="4">阿比奥特</TargetName>
+		<TargetName ID="5">埃伯特</TargetName>
+		<TargetName ID="6">阿卜伯特</TargetName>
+		<TargetName ID="7">阿布特</TargetName>
+		<TargetName ID="8">艾伯特</TargetName>
+		<TargetName ID="9">阿布布特</TargetName>
+		<TargetName ID="10">阿布奥特</TargetName>
+		<TargetName ID="11">阿布鲍特</TargetName>
+		<TargetName ID="12">奥伯特</TargetName>
+		<TargetName ID="13">阿比厄特</TargetName>
+		<TargetName ID="14">亚伯特</TargetName>
+		<TargetName ID="15">阿伯得</TargetName>
+		<TargetName ID="16">阿伯克</TargetName>
+		<TargetName ID="17">艾布伯特</TargetName>
+		<TargetName ID="18">阿卜布特</TargetName>
+		<TargetName ID="19">阿伯托</TargetName>
+		<TargetName ID="20">阿比欧</TargetName>
+	</Name>
+	<Name ID="4">
+		<SourceName>ABELE</SourceName>
+		<TargetName ID="1">阿贝尔</TargetName>
+		<TargetName ID="2">阿伯利</TargetName>
+		<TargetName ID="3">阿布尔</TargetName>
+		<TargetName ID="4">阿伯尔</TargetName>
+		<TargetName ID="5">阿比尔</TargetName>
+		<TargetName ID="6">阿贝利</TargetName>
+		<TargetName ID="7">阿布尔</TargetName>
+		<TargetName ID="8">阿贝尔尔</TargetName>
+		<TargetName ID="9">埃布尔</TargetName>
+		<TargetName ID="10">阿贝勒</TargetName>
+		<TargetName ID="11">阿布斯</TargetName>
+		<TargetName ID="12">阿布尔尔</TargetName>
+		<TargetName ID="13">阿布利</TargetName>
+		<TargetName ID="14">阿贝尔斯</TargetName>
+		<TargetName ID="15">埃贝尔</TargetName>
+		<TargetName ID="16">阿比利</TargetName>
+		<TargetName ID="17">阿拜尔</TargetName>
+		<TargetName ID="18">埃布尔尔</TargetName>
+		<TargetName ID="19">埃比尔</TargetName>
+		<TargetName ID="20">阿布勒</TargetName>
+
+	</Name>
+</TransliterationTaskResults>
+
