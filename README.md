@@ -2,10 +2,20 @@ Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery 
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" alt="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" height="300">
+<img src="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" alt="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" height="360">
 </p>
 
-Tested using pytorch version '0.3.1.post2' with python3.
+## Requirements
+
+1. python3
+2. pytorch version '0.3.1'. Can be installed using the following command,
+```
+conda install -c pytorch pytorch=0.3.1
+```
+3. editdistance
+```
+pip install editdistance
+```
 
 ## Running the code
 
