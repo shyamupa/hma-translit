@@ -1,6 +1,9 @@
 Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
 
-[[https://github.com/shyamupa/hma-translit/blob/master/image.pdf|alt=model figure]]
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" alt="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" height="300">
+</p>
 
 Tested using pytorch version '0.3.1.post2' with python3.
 
