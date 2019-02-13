@@ -29,6 +29,16 @@ To run in interactive mode
 ```bash
 ./load_and_test_model_interactive.sh hindi_data.vocab hindi.model
 ```
+You will see a prompt to enter surface forms in the source writing script (see below)
+```
+...
+...
+:INFO: => loading checkpoint hindi.model
+:INFO: => loaded checkpoint!
+enter surface:ओबामा
+ओ ब ा म ा
+[(-0.4624647759074629, 'o b a m a')]
+```
 
 #### Get Predictions for Test input
 1. First prepare a test file (let's call it `hindi.test`) such that each line contains a sequence of space separated characters of each input token,
@@ -48,8 +58,9 @@ This will generate output in the test file as follows,
 आ च र े क र      a c h a r e k a r;a c h a b e k a r;a a c h a r e k a r -0.6695770507547368;-2.079195646460341;-2.465612842870943
 ``` 
 
-where the 2nd column is the (; delimited) output from the beam search (using `beam_width` of 3) and 3rd column contains the (';' delimited) corresponding scores for each item. 
+where the 2nd column is the (';' delimited) output from the beam search (using `beam_width` of 3) and 3rd column contains the (';' delimited) corresponding scores for each item. 
 That is, the model score for `a c h a r e k a r` was  `-0.6695770507547368`. 
+
 ### Training Your Own Model
 
 1. First compile the C code for the aligner.
@@ -112,21 +123,3 @@ The output should report relevant metrics,
 ...
 ...
 ```
-
-There is also a interactive mode where one can input test words directly,
-
-```bash
-./load_and_test_model_interactive.sh <ftrain> <model> <seed>
-```
-
-You will see a prompt to enter surface forms in the source writing script (see below)
-```
-...
-...
-:INFO: => loading checkpoint hindi.model
-:INFO: => loaded checkpoint!
-enter surface:ओबामा
-ओ ब ा म ा
-[(-0.4624647759074629, 'o b a m a')]
-```
-
