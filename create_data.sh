@@ -2,22 +2,20 @@
 ME=`basename $0` # for usage message
 
 if [[ "$#" -ne 5 ]]; then 	# number of args
-    echo "USAGE: ${ME} <vocabfile> <aligned_file> <fdev> <seed> <model_path>"
+    echo "USAGE: ${ME} <ftrain> <ftest> <seed> <vocabfile> <aligned_file>"
     exit
 fi
-vocabfile=$1
-aligned_file=$2
-fdev=$3
-seed=$4
-model=$5
+ftrain=$1
+ftest=$2
+seed=$3
+vocabfile=$4
+aligned_file=$5
 
-time python -m seq2seq.main \
+time python -m seq2seq.prepare_data \
+     --ftrain ${ftrain} \
+     --ftest ${ftest} \
      --vocabfile ${vocabfile} \
      --aligned_file ${aligned_file} \
-     --ftest ${fdev} \
-     --mono \
-     --beam_width 1 \
-     --save ${model} \
      --seed ${seed}
 
 

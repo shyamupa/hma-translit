@@ -1,10 +1,38 @@
-Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
+### Using Trained Models for Generating Transliterations
 
-[[https://github.com/shyamupa/hma-translit/blob/master/image.pdf|alt=model figure]]
+Download and untar the relevant trained model.
+Right now the models for [bengali](http://bilbo.cs.illinois.edu/~upadhya3/bengali.tar.gz), [kannada](http://bilbo.cs.illinois.edu/~upadhya3/kannada.tar.gz) or [hindi](http://bilbo.cs.illinois.edu/~upadhya3/hindi.tar.gz) trained on the NEWS2015 datasets are available. 
 
-Tested using pytorch version '0.3.1.post2' with python3.
+Each tarball contains the vocab files and the pytorch model.
 
-## Running the code
+#### Interactive Mode
+To run in interactive mode
+
+```bash
+./load_and_test_model_interactive.sh hindi_data.vocab hindi.model
+```
+
+#### Get Predictions for Test input
+1. First prepare a test file (let's call it `hindi.test`) such that each line contains a sequence of space separated characters of each input token,
+
+```
+आ च र े क र
+आ च व ल
+```
+
+2. Then run the trained model on it using the following command,
+```bash
+./load_and_test_model_on_files.sh hindi_data.vocab hindi.model hindi.test hindi.test.out
+```
+This will generate output in the test file as follows,
+
+```
+आ च र े क र      a c h a r e k a r;a c h a b e k a r;a a c h a r e k a r -0.6695770507547368;-2.079195646460341;-2.465612842870943
+``` 
+
+where the 2nd column is the (; delimited) output from the beam search (using `beam_width` of 3) and 3rd column contains the (';' delimited) corresponding scores for each item. 
+That is, the model score for `a c h a r e k a r` was  `-0.6695770507547368`. 
+### Training Your Own Model
 
 1. First compile the C code for the aligner.
 ```bash
@@ -20,18 +48,28 @@ x1 x2 x3<tab>y1 y2 y3 y4 y5
 where `x1x2x3` is the input word (`xi` is the character), and `y1y2y3y4y5` is the desired output (transliteration). Example train and test files for bengali are in data/ folder. There is a optional 3rd column marking whether the word is *native* or *foreign* (see the paper for these terms); this column can be ignored for most purposes. 
 
 
-3. Run `train_model_on_files.sh` on your train (say `train.txt`) and dev file (say `dev.txt`) as follows,
+3. Create the vocab files and aligned data using `prepare_data.sh`
 
+```bash
+./prepare_data.sh hindi_train.txt hindi_dev.txt 100 hindi_data.vocab hindi_data.aligned  
 ```
-./train_model_on_files.sh train.txt dev.txt 100 translit.model
+
+This will create two vocab files `hindi_data.vocab.envoc` and `hindi_data.vocab.frvoc`, and a file `hindi_data.aligned` containing the (monotonically) aligned training data .
+
+
+4. Run `train_model_on_files.sh` on your train (say train.txt) and dev file (dev.txt) as follows,
+
+```bash
+./train_model_on_files.sh hindi_data.vocab hindi_data.aligned hindi_dev.txt 100 hindi.model
 ```
 
-where 100 is the random seed and translit.model is the output model. Other parameters(see `utils/arguments.py` for options) can be specified by modifying the `train_model_on_files.sh` script appropriately.
+where 100 is the random seed and hindi.model is the output model. 
+Other parameters like embedding size, hidden size (see `utils/arguments.py` for all options) can be specified by modifying the `train_model_on_files.sh` script appropriately.
 
-4. Test the trained model as follows,
+5. Test the trained model as follows,
 
-```
-./load_and_test_model_on_files.sh train.txt test.txt translit.model 100 output.txt
+```bash
+./load_and_test_model_on_files.sh hindi_data.vocab hindi.model hindi_test.txt output.txt
 ```
 
 The output should report relevant metrics,
@@ -59,8 +97,12 @@ The output should report relevant metrics,
 
 There is also a interactive mode where one can input test words directly,
 
+```bash
+./load_and_test_model_interactive.sh <ftrain> <model> <seed>
 ```
-./load_and_test_model_interactive.sh train.txt translit.model 100
+
+You will see a prompt to enter surface forms in the source writing script (see below)
+```
 ...
 ...
 :INFO: => loading checkpoint hindi.model
@@ -70,13 +112,3 @@ enter surface:ओबामा
 [(-0.4624647759074629, 'o b a m a')]
 ```
 
-### Citation
-
-```
-@InProceedings{UKR18,
-  author =       {Upadhyay, Shyam and Kodner, Jordan and Roth, Dan},
-  title =        {Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages},
-  booktitle =    {EMNLP},
-  year =         {2018},
-}
-```

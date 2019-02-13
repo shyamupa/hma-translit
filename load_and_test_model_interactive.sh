@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 ME=`basename $0` # for usage message
 
-if [ "$#" -ne 3 ]; then 	# number of args
-    echo "USAGE: ${ME} <ftrain> <model> <seed>"
+if [[ "$#" -ne 2 ]]; then 	# number of args
+    echo "USAGE: ${ME} <vocabfile> <model>"
     echo 
     exit
 fi
-ftrain=$1
+vocabfile=$1
 model=$2
-seed=$3
-time python -m seq2seq.main \
-     --ftrain ${ftrain} \
+time python -m seq2seq.predict \
+     --vocabfile ${vocabfile} \
      --mono \
      --beam_width 1 \
      --restore ${model} \
-     --interactive \
-     --seed ${seed}
+     --interactive
 
 if [[ $? == 0 ]]        # success
 then

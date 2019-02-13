@@ -1,20 +1,15 @@
 from __future__ import division
 from __future__ import print_function
 
-import sys
 import logging
-
-from seq2seq.lang import Lang
-from seq2seq.constants import ALIGN_SYMBOL
-from baseline import align_utils
-
 import random
-from collections import Counter
-# from seq2seq.main import oracle_action
+
+from baseline import align_utils
+from seq2seq.constants import ALIGN_SYMBOL
 from seq2seq.constants import STEP
 
+
 # logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-import argparse
 
 
 def safe_replace_spaces(s):
@@ -22,6 +17,29 @@ def safe_replace_spaces(s):
     s = s.replace(" ", "")
     s = s.replace("#", " ")
     return s
+
+
+def subsample_examples(examples, frac, single_token):
+    new_examples = []
+    for ex in examples:
+        fr, en, weight, is_eng = ex
+        frtokens, entokens = fr.split(" "), en.split(" ")
+        if len(frtokens) != len(entokens): continue
+        if single_token:
+            if len(frtokens) > 1 or len(entokens) > 1: continue
+        for frtok, entok in zip(frtokens, entokens):
+            new_examples.append((frtok, entok, weight, is_eng))
+    examples = new_examples
+    logging.info("new examples %d", len(examples))
+    # subsample if needed
+    random.shuffle(examples)
+    if frac < 1.0:
+        tmp = examples[0:int(frac * len(examples))]
+        examples = tmp
+    elif frac > 1.0:
+        tmp = examples[0:int(frac)]
+        examples = tmp
+    return examples
 
 
 def read_examples(fpath, native_or_eng="both", remove_spaces=False, weight=1.0):

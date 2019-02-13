@@ -31,7 +31,7 @@ def setup_optimizers(args, encoder, decoder):
 
 def model_builder(args, fr_lang, en_lang):
     bidi = args["bidi"]
-    device_id = args["device_id"]
+    # device_id = args["device_id"]
     batch_first = args["batch_first"]
     vector_size = args["wdim"]
     hidden_size = args["hdim"]
@@ -73,9 +73,9 @@ def model_builder(args, fr_lang, en_lang):
     logging.info(encoder)
     logging.info(decoder)
     # Move models to GPU
-    if device_id is not None:
-        encoder.cuda(device_id)
-        decoder.cuda(device_id)
+    # if device_id is not None:
+    #     encoder.cuda(device_id)
+    #     decoder.cuda(device_id)
     return encoder, decoder, evaler
 
 

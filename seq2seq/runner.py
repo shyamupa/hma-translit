@@ -8,7 +8,7 @@ from seq2seq.model_utils import save_checkpoint
 __author__ = 'Shyam'
 
 
-def run(args, examples, trainer, criterion, evaler, train, test, test_reporter, train_reporter):
+def run(args, examples, trainer, criterion, evaler, test, test_reporter, train=None, train_reporter=None):
     n_epochs = args["iters"]
     logging.info("training on %d examples for %d epochs", len(examples), n_epochs)
     random.shuffle(examples)
