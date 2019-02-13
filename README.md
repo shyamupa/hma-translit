@@ -1,3 +1,5 @@
+Transliteration with Hard Monotonic Attention
+----------------------------------------------
 Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
 
 <p align="center">
