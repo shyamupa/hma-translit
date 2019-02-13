@@ -1,3 +1,21 @@
+Code for the EMNLP paper, "[Bootstrapping Transliteration with Guided Discovery for Low-Resource Languages](http://shyamupa.com/papers/UKR18.pdf)".
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" alt="https://raw.githubusercontent.com/shyamupa/hma-translit/master/image.png" height="360">
+</p>
+
+## Requirements
+
+1. python3
+2. pytorch version '0.3.1'. Can be installed using the following command,
+```
+conda install -c pytorch pytorch=0.3.1
+```
+3. editdistance
+```
+pip install editdistance
+```
+
 ### Using Trained Models for Generating Transliterations
 
 Download and untar the relevant trained model.
